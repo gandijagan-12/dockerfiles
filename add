@@ -1,0 +1,5 @@
+FROM almalinux:9
+RUN dnf install nginx -y
+RUN rm -rf /usr/share/nginx/html/index.html
+ADD https://github.com/daws-84s/concepts/blob/main/linux-directory-structure.MD
+CMD ["nginx", "-g", "demon -ff;"] /usr/share/nginx/html/index.html
